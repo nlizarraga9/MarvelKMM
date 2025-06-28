@@ -1,4 +1,4 @@
-package com.example.marvelkmm.android.ui
+package com.example.marvelkmm.android.ui.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

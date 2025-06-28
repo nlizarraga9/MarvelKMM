@@ -1,4 +1,4 @@
-package com.example.marvelkmm.android.ui
+package com.example.marvelkmm.android.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

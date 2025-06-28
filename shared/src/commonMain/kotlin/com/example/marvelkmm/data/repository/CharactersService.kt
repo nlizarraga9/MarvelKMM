@@ -23,8 +23,9 @@ class CharactersService(
             local.saveCharacters(characters)
             sort(characters)
         } catch (e: Exception) {
-            println("Error de red, usando caché local: ${e.message}")
-            getCachedCharacters()
+            val cached = local.getCachedCharacters()
+            if (cached.isEmpty()) throw e
+            cached
         }
     }
 

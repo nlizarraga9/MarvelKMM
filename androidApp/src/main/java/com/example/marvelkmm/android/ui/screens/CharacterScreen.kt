@@ -1,4 +1,4 @@
-package com.example.marvelkmm.android.ui
+package com.example.marvelkmm.android.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.marvelkmm.android.ui.viewmodels.CharactersViewModel
+import com.example.marvelkmm.android.ui.component.CharacterCard
 
 @Composable
 fun CharacterScreen (viewModel: CharactersViewModel) {
@@ -36,6 +38,14 @@ fun CharacterScreen (viewModel: CharactersViewModel) {
                     CharacterCard(marvelCharacter)
                 }
             }
+        }
+
+        is ScreenState.Error -> {
+            val message = (state as ScreenState.Error).message
+            ErrorScreen(
+                message = message,
+                onRetry = { viewModel.loadCharacters()}
+            )
         }
     }
 }
